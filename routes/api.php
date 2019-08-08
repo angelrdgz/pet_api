@@ -18,7 +18,13 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
+Route::post('/auth/register', 'AuthController@register');
+Route::post('/auth/login', 'AuthController@login');
+Route::post('/auth/logout', 'AuthController@logout')->middleware('auth:api');
 
-Route::resource('/pets', 'API\PetController');
 
-Route::middleware('auth:api')->group(function () { });
+Route::middleware('auth:api')->group(function () {
+
+    Route::resource('/pets', 'API\PetController');
+
+});
