@@ -26,5 +26,6 @@ Route::post('/auth/logout', 'AuthController@logout')->middleware('auth:api');
 Route::middleware('auth:api')->group(function () {
 
     Route::resource('/pets', 'API\PetController');
+    Route::resource('/zones', 'API\ZoneController');
 
 });

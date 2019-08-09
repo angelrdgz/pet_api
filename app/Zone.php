@@ -6,5 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Zone extends Model
 {
-    //
+    public function services(){
+        return $this->hasMany('App\ZoneService');
+    }
 }
