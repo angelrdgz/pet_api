@@ -28,4 +28,6 @@ Route::middleware('auth:api')->group(function () {
     Route::resource('/pets', 'API\PetController');
     Route::resource('/zones', 'API\ZoneController');
 
+    Route::get('/get-services/{zone}', 'API\ServiceController@getServices');
+
 });
