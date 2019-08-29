@@ -13,12 +13,16 @@ class CreateJobsTable extends Migration
      */
     public function up()
     {
+        if (!Schema::hasTable('jobs')) {
         Schema::create('jobs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
+            $table->integer('user_id');            
             $table->string("status",50);
+            $table->datetime('start');
+            $table->string('comments', 200);
             $table->timestamps();
         });
+    }
     }
 
     /**

@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.css' />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -18,7 +20,8 @@
         <!-- Sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <h3>Bootstrap Sidebar</h3>
+               
+            <img src="{{asset('images/iconpet.png')}}" alt="">
             </div>
 
             <ul class="list-unstyled components">
@@ -35,7 +38,19 @@
                             <a href="#">Home 3</a>
                         </li>
                     </ul>
-                </li>-->
+                </li>-->                
+                <li>
+                    <a href="{{url('admin/calendar')}}">Calendario</a>
+                </li>
+                <li>
+                    <a href="{{url('admin/zonas')}}">Dashboard</a>
+                </li>
+                <li>
+                    <a href="{{url('admin/zonas')}}">Peticiones</a>
+                </li>
+                <li>
+                    <a href="{{url('admin/zonas')}}">Zonas</a>
+                </li>
                 <li>
                     <a href="{{url('admin/zonas')}}">Zonas</a>
                 </li>
@@ -52,7 +67,9 @@
                             <a href="#">Page 2</a>
                         </li>
                         <li>
-                            <a href="#">Page 3</a>
+                            <a href="#">
+                                <i class="fas fa-bell"></i>
+                            </a>
                         </li>
                     </ul>
                 </li>
@@ -61,10 +78,8 @@
         </nav>
         <!-- Page Content -->
         <div id="content">
-
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
                     </button>
@@ -75,17 +90,28 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="nav navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Page</a>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-user-circle"></i>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
+                                <div class="dropdown dropleft">
+                                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">
+                                        <i class="fas fa-bell"></i>
+                                        <span class="badge badge-primary">4</span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Page</a>
+                                <a class="nav-link" href="#">
+                                    <i class="fas fa-cog"></i>
+                                </a>
                             </li>
                         </ul>
                     </div>
@@ -106,6 +132,8 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     <!-- jQuery Custom Scroller CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.1.0/fullcalendar.min.js'></script>
     <script>
         $(document).ready(function() {
 
@@ -120,6 +148,7 @@
 
         });
     </script>
+    @yield('script')
 </body>
 
 </html>

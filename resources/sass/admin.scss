@@ -38,6 +38,15 @@ a:focus {
   z-index: 999;
   .sidebar-header {
     padding: 20px;
+    img{
+      width:150px;
+      display:block;
+      margin: 30px auto;
+      -webkit-filter: drop-shadow(1px 1px 0 #fff)
+                  drop-shadow(-1px -1px 0 #fff);
+  filter: drop-shadow(1px 1px 0 #fff) 
+          drop-shadow(-1px -1px 0 #fff);
+    }
   }
   ul.components {
     padding: 0;
@@ -88,6 +97,22 @@ a:focus {
     .card-transparent{
         background: transparent;
         border: 0;
+    }
+
+    .dropdown-toggle{
+      &:before{
+        display:none;
+      }        
+    }
+    #navbarSupportedContent{
+      ul{
+        li{
+          margin: 0px 5px;
+          a{
+            font-size: 1.4em;
+          }
+        }
+      }
     }
 }
 

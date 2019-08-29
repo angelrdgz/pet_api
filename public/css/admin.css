@@ -35,6 +35,13 @@ a:focus {
 #sidebar .sidebar-header {
   padding: 20px;
 }
+#sidebar .sidebar-header img {
+  width: 150px;
+  display: block;
+  margin: 30px auto;
+  -webkit-filter: drop-shadow(1px 1px 0 #fff) drop-shadow(-1px -1px 0 #fff);
+  filter: drop-shadow(1px 1px 0 #fff) drop-shadow(-1px -1px 0 #fff);
+}
 #sidebar ul.components {
   padding: 0;
   border-bottom: 1px solid #47748b;
@@ -78,6 +85,15 @@ a:focus {
 #content .card-transparent {
   background: transparent;
   border: 0;
+}
+#content .dropdown-toggle:before {
+  display: none;
+}
+#content #navbarSupportedContent ul li {
+  margin: 0px 5px;
+}
+#content #navbarSupportedContent ul li a {
+  font-size: 1.4em;
 }
 
 #content.active {
