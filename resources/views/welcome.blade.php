@@ -98,9 +98,9 @@
 
 @section('content')
 <div class="home-first">
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-  <path fill="#ffffff" fill-opacity="1" d="M0,160L1440,288L1440,320L0,320Z"></path>
-</svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffffff" fill-opacity="1" d="M0,160L1440,288L1440,320L0,320Z"></path>
+    </svg>
 </div>
 <div class="home-second">
     <div class="container">
@@ -109,30 +109,89 @@
                 <h2 class="text-center">Conciente a tu mascota</h2>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-6">
-
+        <br>
+        <div class="row d-md-flex align-items-center h-100 justify-content-center">
+            <div class="col-sm-7">
+                <h4 class="text-center">Servicios de Paseo</h4>
+                <br>
+                <p>
+                    <div class="row  d-md-flex align-items-center h-100 justify-content-center">
+                        <div class="col-sm-2 text-center">
+                            <i class="fas fa-paw icon-description"></i>
+                        </div>
+                        <div class="col-sm-10">
+                            <h6><b>Paseo de tu mascota</b></h6>
+                            <p>Tu mascota debe de pasear de 2 a 3 veces por semana para evitar su estres.</p>
+                        </div>
+                    </div>
+                </p>
+                <p>
+                    <div class="row  d-md-flex align-items-center h-100 justify-content-center">
+                        <div class="col-sm-2 text-center">
+                            <i class="fas fa-dog icon-description"></i>
+                        </div>
+                        <div class="col-sm-10">
+                            <h6><b>Paseo de tu mascota</b></h6>
+                            <p>Tu mascota debe de pasear de 2 a 3 veces por semana para evitar su estres.</p>
+                        </div>
+                    </div>
+                </p>
             </div>
-            <div class="col-sm-6">
-                <img src="{{asset('imgs/perro.png')}}" alt="">
+            <div class="col-sm-5">
+                <img src="{{asset('imgs/perro.png')}}" class="ilustration" alt="">
             </div>
         </div>
-        <div class="row">
-        <div class="col-sm-6">
-                <img src="{{asset('imgs/perro.png')}}" alt="">
+        <br>
+        <div class="row d-md-flex align-items-center h-100 justify-content-center">
+            <div class="col-sm-5">
+                <img src="{{asset('imgs/perro.png')}}" class="ilustration" alt="">
             </div>
-            <div class="col-sm-6">
-
-            </div>            
+            <div class="col-sm-7">
+                <h4 class="text-center">Hotel para tu mascota</h4>
+                <br>
+                <p>
+                    <div class="row  d-md-flex align-items-center h-100 justify-content-center">
+                        <div class="col-sm-2 text-center">
+                            <i class="far fa-moon icon-description"></i>
+                        </div>
+                        <div class="col-sm-10">
+                            <h6><b>Paseo de tu mascota</b></h6>
+                            <p>Tu mascota debe de pasear de 2 a 3 veces por semana para evitar su estres.</p>
+                        </div>
+                    </div>
+                </p>
+                <p>
+                    <div class="row  d-md-flex align-items-center h-100 justify-content-center">
+                        <div class="col-sm-2 text-center">
+                            <i class="fas fa-bone icon-description"></i>
+                        </div>
+                        <div class="col-sm-10">
+                            <h6><b>Paseo de tu mascota</b></h6>
+                            <p>Tu mascota debe de pasear de 2 a 3 veces por semana para evitar su estres.</p>
+                        </div>
+                    </div>
+                </p>
+            </div>
         </div>
     </div>
 </div>
 <div class="home-third">
-<svg class="up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-  <path fill="#ffffff" fill-opacity="1" d="M0,32L1440,160L1440,0L0,0Z"></path>
-</svg>
-<svg class="down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-  <path fill="#ffffff" fill-opacity="1" d="M0,192L1440,288L1440,320L0,320Z"></path>
-</svg>
+    <svg class="up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffffff" fill-opacity="1" d="M0,32L1440,160L1440,0L0,0Z"></path>
+    </svg>
+    <svg class="down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#ffffff" fill-opacity="1" d="M0,192L1440,288L1440,320L0,320Z"></path>
+    </svg>
+</div>
+<div class="home-fourth">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">A</div>
+            <div class="col-sm-4">
+                <img src="{{ asset('imgs/phone.png') }}" alt="">
+            </div>
+            <div class="col-sm-4">C</div>
+        </div>
+    </div>
 </div>
 @endsection

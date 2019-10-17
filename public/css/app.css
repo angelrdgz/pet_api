@@ -9718,12 +9718,21 @@ h3 {
     border-color: #dee2e6;
   }
 }
+* {
+  padding: 0;
+  margin: 0;
+}
+
 input.form-control {
   border-radius: 20px;
 }
 
 .no-border {
   border: 0 !important;
+}
+
+.btn-rounded {
+  border-radius: 22px;
 }
 
 #site-layout {
@@ -9737,6 +9746,10 @@ input.form-control {
 }
 #site-layout .navbar .navbar-nav .nav-item .nav-link {
   color: #fff;
+  padding-bottom: 1px;
+}
+#site-layout .navbar .navbar-nav .nav-item .nav-link:hover {
+  border-bottom: 2px solid #fff;
 }
 #site-layout .home-first {
   width: 100%;
@@ -9767,6 +9780,14 @@ input.form-control {
   background: #fff;
   position: relative;
 }
+#site-layout .home-second .icon-description {
+  font-size: 3.2em;
+}
+#site-layout .home-second .ilustration {
+  width: 100%;
+  display: block;
+  margin: auto;
+}
 #site-layout .home-second svg {
   position: absolute;
   bottom: 0;
@@ -9788,6 +9809,35 @@ input.form-control {
   position: absolute;
   bottom: 0;
   left: 0;
+}
+#site-layout .home-fourth {
+  width: 100%;
+  height: auto;
+  background: #fff;
+  position: relative;
+}
+#site-layout .home-fourth img {
+  max-width: 95%;
+  display: block;
+  margin: 0 auto;
+}
+#site-layout .footer {
+  background: #2ACF73;
+  color: #fff;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  overflow: auto;
+}
+#site-layout .footer ul {
+  list-style: none;
+  padding: 0;
+}
+#site-layout .footer ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+#site-layout .footer .footer-icon {
+  font-size: 2em;
 }
 
 #app-layout {
