@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap);@charset "UTF-8";
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -9717,4 +9717,102 @@ h3 {
     color: inherit;
     border-color: #dee2e6;
   }
+}
+input.form-control {
+  border-radius: 20px;
+}
+
+.no-border {
+  border: 0 !important;
+}
+
+#site-layout {
+  font-family: "Be Vietnam", sans-serif;
+}
+#site-layout .navbar {
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#site-layout .navbar .navbar-nav .nav-item .nav-link {
+  color: #fff;
+}
+#site-layout .home-first {
+  width: 100%;
+  height: 700px;
+  background: url("../imgs/dog_walk.png") no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+#site-layout .home-first svg {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+}
+#site-layout .home-first:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+}
+#site-layout .home-second {
+  width: 100%;
+  height: auto;
+  padding: 20px auto;
+  background: #fff;
+  position: relative;
+}
+#site-layout .home-second svg {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+}
+#site-layout .home-third {
+  width: 100%;
+  height: 700px;
+  background: url("../imgs/pension.jpg") no-repeat;
+  background-size: 100%;
+  position: relative;
+}
+#site-layout .home-third svg.up {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#site-layout .home-third svg.down {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+#app-layout {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+#app-layout .logo {
+  max-width: 180px;
+  display: block;
+  margin: 20px auto;
+}
+@media (min-width: 768px) {
+  #app-layout .h-md-100 {
+    height: 100vh;
+  }
+}
+#app-layout .btn-round {
+  border-radius: 30px;
+}
+#app-layout .bg-indigo {
+  background: url("../imgs/paseo_perros.jpg") no-repeat;
+  background-size: 100% 100%;
+}
+#app-layout .text-cyan {
+  color: #35bdff;
 }

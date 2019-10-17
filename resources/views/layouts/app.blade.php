@@ -1,22 +1,15 @@
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
@@ -31,14 +24,10 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
-
-                    <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -77,4 +66,31 @@
         </main>
     </div>
 </body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <title>Pet Walk</title>
+</head>
+
+<body id="app-layout">
+    <div class="d-md-flex h-md-100 align-items-center">
+    <div class="col-md-5 p-0 bg-white h-md-100 loginarea">
+            <div class="d-md-flex align-items-center h-md-100 p-5 justify-content-center">
+               @yield('content')
+            </div>
+        </div>
+        <div class="col-md-7 p-0 bg-indigo h-md-100">
+            <div class="text-white d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
+            </div>
+        </div>
+        
+    </div>
+</body>
+
 </html>

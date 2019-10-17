@@ -1,15 +1,11 @@
-<!doctype html>
+<!--<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Laravel</title>
-
-        <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
         <style>
             html, body {
                 background-color: #fff;
@@ -96,4 +92,47 @@
             </div>
         </div>
     </body>
-</html>
+</html>-->
+
+@extends('layouts.site')
+
+@section('content')
+<div class="home-first">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#ffffff" fill-opacity="1" d="M0,160L1440,288L1440,320L0,320Z"></path>
+</svg>
+</div>
+<div class="home-second">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2 class="text-center">Conciente a tu mascota</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+
+            </div>
+            <div class="col-sm-6">
+                <img src="{{asset('imgs/perro.png')}}" alt="">
+            </div>
+        </div>
+        <div class="row">
+        <div class="col-sm-6">
+                <img src="{{asset('imgs/perro.png')}}" alt="">
+            </div>
+            <div class="col-sm-6">
+
+            </div>            
+        </div>
+    </div>
+</div>
+<div class="home-third">
+<svg class="up" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#ffffff" fill-opacity="1" d="M0,32L1440,160L1440,0L0,0Z"></path>
+</svg>
+<svg class="down" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+  <path fill="#ffffff" fill-opacity="1" d="M0,192L1440,288L1440,320L0,320Z"></path>
+</svg>
+</div>
+@endsection

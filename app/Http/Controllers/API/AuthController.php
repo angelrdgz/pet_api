@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\Hash;
@@ -10,19 +12,7 @@ class AuthController extends Controller
 {
     public function login(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'email' => 'required',
-            'password' => 'required'
-        ],
-        [
-            'email.required' => 'El correo es requerido',
-            'password.required' => 'La contraseña es requerida'
-        ]);
 
-        if ($validator->fails()) {
-            return back()->withInput()->withErrors($validator->errors());
-        }
-        
         $user = User::where('email', $request->email)->first();
 
         if ($user) {
@@ -47,24 +37,12 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'email' => 'required|unique:users|max:255',
             'name' => 'required',
-            'password' => 'required|min:7|max:15',
-            'phone' => 'required|min:10|max:12',
-        ],
-        [
-            'email.required' => 'El correo es requerido',
-            'email.unique' => 'El correo ya esta registrado',
-            'email.max' => 'El correo no puede exceder mas de :max caracteres',
-            'name.required' => 'El nombre es requerido',
-            'password.required' => 'La contraseña es requerida',
-            'password.min' => 'La contraseña debe tener más de :min caracteres',
-            'password.max' => 'La contraseña debe tener menos de :max caracteres',
-            'phone.required' => 'El teléfono es requerido',
-            'phone.min' => 'El teléfono debe tener de :min caracteres',
-            'phone.max' => 'El teléfono debe tener de :max caracteres',
+            'password' => 'required',
+            'phone' => 'required',
         ]);
 
         if ($validator->fails()) {
-            return back()->withInput()->withErrors($validator->errors());
+            return response(['errors' => $validator->errors()->all()], 422);
         }
 
         $user = new User();
@@ -76,5 +54,15 @@ class AuthController extends Controller
         $user->save();
 
         return response()->json(['message' => "User saved successfully"], 200);
+    }
+
+    public function logout (Request $request) {
+
+        $token = $request->user()->token();
+        $token->revoke();
+    
+        $response = 'You have been succesfully logged out!';
+        return response()->json([$response], 200);
+    
     }
 }

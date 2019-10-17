@@ -19,6 +19,27 @@ a:focus {
   transition: all 0.3s;
 }
 
+#app-layout {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+@media (min-width: 768px) {
+  #app-layout .h-md-100 {
+    height: 100vh;
+  }
+}
+#app-layout .btn-round {
+  border-radius: 30px;
+}
+#app-layout .bg-indigo {
+  background: indigo;
+}
+#app-layout .text-cyan {
+  color: #35bdff;
+}
+
 #sidebar {
   /* don't forget to add all the previously mentioned styles here too */
   background: url(/imgs/background_sidenav.png) repeat center center fixed;
