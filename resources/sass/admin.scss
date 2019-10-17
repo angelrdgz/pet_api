@@ -1,8 +1,20 @@
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import url("https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap");
 
-body {
-  font-family: "Poppins", sans-serif;
-  background: #fafafa;
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap/scss/bootstrap";
+
+html {
+  width: 100%;
+  height: 100%;
+  font-family: "Be Vietnam", sans-serif;
+
+  body {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 p {
@@ -42,98 +54,123 @@ a:focus {
   }
 }
 
-#sidebar {
-  /* don't forget to add all the previously mentioned styles here too */
-  background: url(/imgs/background_sidenav.png) repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  color: #fff;
-  transition: all 0.3s;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  z-index: 999;
-  .sidebar-header {
-    padding: 20px;
-    img {
-      width: 150px;
-      display: block;
-      margin: 30px auto;
-      -webkit-filter: drop-shadow(1px 1px 0 #fff) drop-shadow(-1px -1px 0 #fff);
-      filter: drop-shadow(1px 1px 0 #fff) drop-shadow(-1px -1px 0 #fff);
-    }
-  }
-  ul.components {
-    padding: 0;
-    border-bottom: 1px solid #47748b;
-  }
-  ul p {
+#admin-layout {
+  width: 100%;
+  height: 100%;
+
+  #sidebar {
+    /* don't forget to add all the previously mentioned styles here too */
+    background: $green-app;/*url(/imgs/background_sidenav.png) repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;*/
     color: #fff;
-    padding: 10px;
-  }
-  ul {
-    li {
-      a {
-        padding: 10px;
-        font-size: 1.1em;
+    transition: all 0.3s;
+    width: 250px;
+    padding: 30px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 999;
+    .sidebar-header {
+      padding: 20px;
+      text-align: center;
+
+      .icon-logo{
+        color: #fff;
+        font-size: 6em;
+        margin-bottom: 40px;
+      }
+      img {
+        width: 150px;
         display: block;
-        &:hover {
-          color: #7386d5;
-          background: #fff;
+        margin: 30px auto;
+        -webkit-filter: drop-shadow(1px 1px 0 #fff) drop-shadow(-1px -1px 0 #fff);
+        filter: drop-shadow(1px 1px 0 #fff) drop-shadow(-1px -1px 0 #fff);
+      }
+    }
+    ul.components {
+      padding: 0 10px;
+      border-bottom: 1px solid #47748b;
+    }
+    ul p {
+      color: #fff;
+      padding: 10px;
+    }
+    ul {
+      li {
+        a {
+          padding: 10px;
+          font-size: 1.1em;
+          display: block;
+          border-radius: 15px;
+          &:hover {
+            color: #fff;
+            background: rgba(255,255,255,0.5);
+          }
+        }
+      }
+      li.active > a,
+      a[aria-expanded="true"] {
+        color: #fff;
+      }
+      ul {
+        a {
+          font-size: 0.9em !important;
+          padding-left: 30px !important;
         }
       }
     }
-    li.active > a,
-    a[aria-expanded="true"] {
-      color: #fff;
+  }
+
+  #content {
+    width: calc(100% - 250px);
+    padding: 18px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    position: absolute;
+    background: $green-app;
+    top: 0;
+    right: 0;
+    background: $green-app;
+
+    .card{
+      background: $gray-app;
+      border-radius: 20px;
     }
-    ul {
-      a {
-        font-size: 0.9em !important;
-        padding-left: 30px !important;
+  
+    .card-transparent {
+      background: transparent;
+      border: 0;
+    }
+  
+    .dropdown-toggle {
+      &:before {
+        display: none;
+      }
+    }
+    #navbarSupportedContent {
+      ul {
+        li {
+          margin: 0px 5px;
+          a {
+            font-size: 1.4em;
+          }
+        }
       }
     }
   }
 }
+
+
 
 .wrapper {
   width: 100%;
   height: 100%;
 }
-#content {
-  width: calc(100% - 250px);
-  padding: 40px;
-  min-height: 100vh;
-  transition: all 0.3s;
-  position: absolute;
-  top: 0;
-  right: 0;
 
-  .card-transparent {
-    background: transparent;
-    border: 0;
-  }
-
-  .dropdown-toggle {
-    &:before {
-      display: none;
-    }
-  }
-  #navbarSupportedContent {
-    ul {
-      li {
-        margin: 0px 5px;
-        a {
-          font-size: 1.4em;
-        }
-      }
-    }
-  }
-}
 
 #content.active {
   width: 100%;

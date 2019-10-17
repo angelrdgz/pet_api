@@ -1,5 +1,4 @@
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Nunito");
 @import url("https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap");
 
 // Variables
@@ -22,6 +21,25 @@ input.form-control {
 }
 .btn-rounded {
   border-radius: 22px;
+}
+
+.btn-app{
+  background: $green-app;
+  color: #fff;
+
+  &:hover{
+    color: #fff;
+  }
+}
+
+.btn-outline-app{
+  background: #fff;
+  color: $green-app;
+  border: 1px solid $green-app;
+
+  &:hover{
+    color: $green-app;
+  }
 }
 
 #site-layout {

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+use Auth;
 use Illuminate\Http\Request;
 use Validator;
 use Illuminate\Support\Facades\Hash;
@@ -27,17 +29,15 @@ class AuthController extends Controller
 
         if ($user) {
 
-            if (Hash::check($request->password, $user->password)) {
-                $token = $user->createToken('Pets Rules')->accessToken;
-                $response = ['user'=>$user, 'token' => $token];
-                return response($response, 200);
+            if (Auth::attempt($request->only(['email', 'password']))) {
+                return redirect('admin/calendar');
             } else {
-                $response = "Password missmatch";
-                return response($response, 422);
+                $response = "Email o contraseña erroneos";
+                return back()->with('error', $response);
             }
         } else {
-            $response = 'User does not exist';
-            return response($response, 422);
+            $response = "Email o contraseña erroneos";
+            return back()->with('error', $response);
         }
     }
 
@@ -75,6 +75,12 @@ class AuthController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        return response()->json(['message' => "User saved successfully"], 200);
+        $response = "Hemos enviado un código de activación a su correo";
+        return back()->with('success', $response);
+    }
+
+    public function logout(Request $request){
+        Auth::logout(); // log the user out of our application
+        return redirect('login')->with('success','Salio de sesión correctamente');
     }
 }

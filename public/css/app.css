@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Be+Vietnam&display=swap);@charset "UTF-8";
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -9735,6 +9735,23 @@ input.form-control {
   border-radius: 22px;
 }
 
+.btn-app {
+  background: #00cc83;
+  color: #fff;
+}
+.btn-app:hover {
+  color: #fff;
+}
+
+.btn-outline-app {
+  background: #fff;
+  color: #00cc83;
+  border: 1px solid #00cc83;
+}
+.btn-outline-app:hover {
+  color: #00cc83;
+}
+
 #site-layout {
   font-family: "Be Vietnam", sans-serif;
 }
@@ -9822,7 +9839,7 @@ input.form-control {
   margin: 0 auto;
 }
 #site-layout .footer {
-  background: #2ACF73;
+  background: #00cc83;
   color: #fff;
   padding-top: 30px;
   padding-bottom: 30px;

@@ -10,6 +10,27 @@
                         @csrf
 
                         <img src="{{ asset('imgs/logo.png')}}" class="logo" alt="">
+                        @if ($message = Session::get('success'))
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="alert alert-success alert-block">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
+
+                        @if ($message = Session::get('error'))
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="alert alert-danger alert-block">
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
+                                    <strong>{{ $message }}</strong>
+                                </div>
+                            </div>
+                        </div>
+                        @endif
 
                         <div class="form-group">
                             <div class="">
@@ -34,28 +55,15 @@
                                 @enderror
                             </div>
                         </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
                         <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
+                            <div class="col-md-8 offset-md-2 text-center">
+                                <button type="submit" class="btn btn-block btn-outline-app btn-rounded">
+                                    Iniciar Sesión
                                 </button>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
+                                        Olvide mi contraseña
                                     </a>
                                 @endif
                             </div>
