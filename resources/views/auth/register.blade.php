@@ -6,9 +6,8 @@
         <div class="col-md-8">
             <div class="card no-border">
                 <div class="card-body">
-                    <form  method="post" action="{{action('AuthController@register')}}">
+                    <form  method="post" action="{{ url('register') }}">
                         @csrf
-
                         <img src="{{ asset('imgs/logo.png')}}" class="logo" alt="">
 
                         <div class="form-group">

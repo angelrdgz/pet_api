@@ -25,14 +25,17 @@ class ZoneController extends Controller
 
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'name' => 'required',
-            'services'=>'required|array'
-        ]);
 
-        if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-        }
+        $request->validate(
+            [
+                'name' => 'required',
+                'services'=>'required|array'
+            ],
+            [
+                "name.required" => "El nombre es requerido",
+                "services.required" => "Es necesario agregar al menos un servicio",
+            ]
+        );
 
         $zone = new Zone();
         $zone->name = $request->name;
@@ -50,10 +53,47 @@ class ZoneController extends Controller
 
     }
 
-    public function edit(){
-
+    public function edit($id)
+    {
+        $zone = Zone::find($id);
+        $ids = Array();//$zone->services()->pluck('id');
+        foreach ($zone->services()->pluck('service_id') as $key => $item) {
+            $ids[$item] =  $item;
+        }
+        
+        $services = Service::all();
+        return view('admin.zones.edit', [ 'services'=>$services, "zone"=>$zone, 'ids'=>$ids]);
     }
 
-    public function update(){}
+    public function update(Request $request, $id)
+    {
+        $request->validate(
+            [
+                'name' => 'required',
+                'services'=>'required|array'
+            ],
+            [
+                "name.required" => "El nombre es requerido",
+                "services.required" => "Es necesario agregar al menos un servicio",
+            ]
+        );
+
+        $zone = Zone::find($id);
+        $zone->name = $request->name;
+        $zone->save();
+
+        $zone->services()->delete();
+
+        foreach($request->services as $key => $service){
+            $zoneService = new ZoneService();
+            $zoneService->zone_id = $zone->id;
+            $zoneService->service_id = $service;
+            $zoneService->price = $request->prices[$key];
+            $zoneService->save();
+        }
+
+        return redirect('admin/zonas')->with('success-message', 'Zona modificada correctamente');
+
+    }
     public function destroy(){}
 }

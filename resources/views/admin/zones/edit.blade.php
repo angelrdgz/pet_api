@@ -1,18 +1,19 @@
 @extends('layouts.admin')
 
 @section('content')
-<h1 class="h3 mb-4 text-gray-800">Nueva Zona</h1>
+<h1 class="h3 mb-4 text-gray-800">Modificar Zona</h1>
 <div class="card card-transparent">
     <div class="card-body">
         <div class="row">
             <div class="col-sm-12">
-            <form method="post" action="{{ url('admin/zonas') }}">
+            <form method="post" action="{{ route('zonas.update', $zone->id) }}">
+          @method('PATCH')
           @csrf
                     <div class="row">
                         <div class="col-sm-5">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Nombre</label>
-                                <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
+                                <input type="text" name="name" value="{{ $zone->name }}" class="form-control @error('name') is-invalid @enderror">
                                 @error('name')
                                 <small id="emailHelp" class="form-text text-muted text-danger"> {{$message}} </small>
                                 @enderror
@@ -43,13 +44,13 @@
                                     <tr>
                                         <td class="text-center" style="width:80px;">
                                             <div class="custom-control custom-switch">
-                                                <input type="checkbox" name="services[]" value="{{$service->id}}" class="custom-control-input" id="switch{{$service->id}}">
-                                                <label class="custom-control-label" for="switch{{$service->id}}"></label>
+                                                <input type="checkbox" name="services[]" value="{{ $service->id }}" class="custom-control-input" {{array_key_exists($service->id, $ids) == true ? "checked":""}} id="switch{{$service->id}}">
+                                                <label class="custom-control-label" for="switch{{$service->id}}" name="services[]"></label>
                                             </div>
                                         </td>
                                         <td>{{$service->name}}</td>
                                         <td>
-                                            <input type="text" class="form-control text-right number" readonly name="prices[]" value="0">
+                                            <input type="text" class="form-control text-right number" {{array_key_exists($service->id, $ids) == true ? "":"readonly"}} name="prices[]" value="{{array_key_exists($service->id, $ids) == true ? $service->getPrice($zone->id, $service->id)->price:"0"}}">
                                         </td>
                                     </tr>
                                     @endforeach
@@ -71,7 +72,7 @@
                         <div class="col-sm-2">
                         <a href="{{ url('admin/zonas') }}" class="btn btn-secondary btn-block">Cancelar</a>
                         </div>
-                    </div>
+                    </div>                    
                 </form>
             </div>
         </div>

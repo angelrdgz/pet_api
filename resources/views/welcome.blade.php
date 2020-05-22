@@ -104,6 +104,99 @@
 </div>
 <div class="home-second">
     <div class="container">
+    <h2 class="text-center">Nuestros Servicios</h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card my-2" style="max-width: 500px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-5" style="background: #868e96;">
+                            <img src="{{ asset('imgs/feed.jpg') }}" class="card-img-top h-100" alt="...">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Alimentación</h5>
+                                <p class="card-text">Alice is a freelance web designer and developer based in London.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card my-2" style="max-width: 500px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-5" style="background: #868e96;">
+                            <img src="{{ asset('imgs/walk.jpg') }}" class="card-img-top h-100" alt="...">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Paseo Calino</h5>
+                                <p class="card-text">Alice is a freelance web designer and developer based in London.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card my-2" style="max-width: 500px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-5" style="background: #868e96;">
+                            <img src="{{ asset('imgs/shawer.jpg') }}" class="card-img-top h-100" alt="...">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Baño</h5>
+                                <p class="card-text">Alice is a freelance web designer and developer based in London.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card my-2" style="max-width: 500px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-5" style="background: #868e96;">
+                            <img src="{{ asset('imgs/shawer.jpg') }}" class="card-img-top h-100" alt="...">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Transporte</h5>
+                                <p class="card-text">Alice is a freelance web designer and developer based in London.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card my-2" style="max-width: 500px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-5" style="background: #868e96;">
+                            <img src="{{ asset('imgs/shawer.jpg') }}" class="card-img-top h-100" alt="...">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Pensión Canina</h5>
+                                <p class="card-text">Alice is a freelance web designer and developer based in London.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card my-2" style="max-width: 500px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-5" style="background: #868e96;">
+                            <img src="{{ asset('imgs/shawer.jpg') }}" class="card-img-top h-100" alt="...">
+                        </div>
+                        <div class="col-md-7">
+                            <div class="card-body">
+                                <h5 class="card-title">Cremación</h5>
+                                <p class="card-text">Alice is a freelance web designer and developer based in London.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-12">
                 <h2 class="text-center">Conciente a tu mascota</h2>

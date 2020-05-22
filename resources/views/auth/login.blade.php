@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card no-border">
                 <div class="card-body">
-                    <form method="post" action="{{action('AuthController@login')}}">
+                    <form method="post" action="{{ url('/login') }}">
                         @csrf
 
                         <img src="{{ asset('imgs/logo.png')}}" class="logo" alt="">
@@ -60,6 +60,10 @@
                                 <button type="submit" class="btn btn-block btn-outline-app btn-rounded">
                                     Iniciar Sesión
                                 </button>
+
+                                <a href="{{ url('registro') }}" class="btn btn-block btn-outline-app btn-rounded">
+                                    Regístrate
+                                </a>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
